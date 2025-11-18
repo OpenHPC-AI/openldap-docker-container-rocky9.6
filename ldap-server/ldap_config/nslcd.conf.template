@@ -15,14 +15,14 @@ gid ldap
 #uri ldaps://127.0.0.1/
 #uri ldapi://%2fvar%2frun%2fldapi_sock/
 # Note: %2f encodes the '/' used as directory separator
-uri ldap://$ldap_server_ip
+uri ldap://$LDAP_SERVER_IP
 
 # The LDAP version to use (defaults to 3
 # if supported by client library)
 #ldap_version 3
 
 # The distinguished name of the search base.
-base dc=${base_secondary_dc},dc=${base_primary_dc}
+base dc=${BASE_SECONDARY_DC},dc=${BASE_PRIMARY_DC}
 
 # The distinguished name to bind to the server with.
 # Optional: default is to bind anonymously.
@@ -140,3 +140,4 @@ base dc=${base_secondary_dc},dc=${base_primary_dc}
 #filter group  (objectClass=aixAccessGroup)
 #map    group  cn               groupName
 #map    group  gidNumber        gid
+
