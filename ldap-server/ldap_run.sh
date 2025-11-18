@@ -5,7 +5,7 @@ set -xe
 ulimit -n 1024
 
 # Check if required environment variables are set
-required_vars=(LDAP_ROOT_PASSWD base_primary_dc base_secondary_dc base_subdomain_dc cn ou1 ou2 ou3 ou4 ou5 ou6 ou7 primary_ldap_server_ip secondary_ldap_server_ip)
+required_vars=(LDAP_ROOT_PASSWD base_primary_dc base_secondary_dc base_subdomain_dc cn ou1 ou2 ou3 ou4 ou5 ou6 ou7 ldap_server_ip)
 
 for var in "${required_vars[@]}"; do
   if [ -z "${!var}" ]; then
