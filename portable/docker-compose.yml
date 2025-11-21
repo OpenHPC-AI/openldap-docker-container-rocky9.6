@@ -1,0 +1,12 @@
+services:
+  ldap_container:
+    image: cdac_ldap/rocky9.6:latest
+    container_name: ldap_server
+    network_mode: host
+    env_file:
+      - .env
+    volumes:
+      - ./ldapdata/:/ldapdata
+    stdin_open: true  # Equivalent to -i
+    tty: true         # Equivalent to -t
+    restart: unless-stopped
