@@ -43,3 +43,4 @@ ou: ${OU6}
 dn: ou=${OU7},dc=${BASE_SUBDOMAIN_DC},dc=${BASE_SECONDARY_DC},dc=${BASE_PRIMARY_DC}
 objectClass: organizationalUnit
 ou: ${OU7}
+
