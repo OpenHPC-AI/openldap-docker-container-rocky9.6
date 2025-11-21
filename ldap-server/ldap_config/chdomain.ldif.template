@@ -26,3 +26,4 @@ olcAccess: {0}to attrs=userPassword,shadowLastChange by
   dn="cn=$CN,dc=$BASE_SECONDARY_DC,dc=$BASE_PRIMARY_DC" write by anonymous auth by self write by * none
 olcAccess: {1}to dn.base="" by * read
 olcAccess: {2}to * by dn="cn=$CN,dc=$BASE_SECONDARY_DC,dc=$BASE_PRIMARY_DC" write by * read
+
