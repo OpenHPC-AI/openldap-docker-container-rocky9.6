@@ -51,9 +51,7 @@ docker build --network host -t openldap:2.17.0 .
 
 **Bonus:**
 
-# ldap host machine setup
-
-# LDAP Host Machine Setup (Single Server)
+# LDAP Host Machine Setup 
 
 These steps required to configure the host machine to use the LDAP commands from host machine.
 ---
