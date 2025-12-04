@@ -1,0 +1,39 @@
+dn: uid=tom,ou=cdac,dc=${base_subdomain_dc},dc=${base_secondary_dc},dc=${base_primary_dc}
+uid: tom
+cn: tom
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: top
+objectClass: shadowAccount
+userPassword: {SSHA}Cdgsiy6E/VJlaDUgUlO57h7SqFO1zV5W
+shadowLastChange: 20101
+shadowMax: 99999
+shadowWarning: 7
+loginShell: /bin/bash
+uidNumber: $uidNumber
+gidNumber: $gidNumber
+homeDirectory: /home/tom
+ObjectClass: ExtensibleObject
+displayName: LDAP Test
+mobile: NA
+gender: NA
+institute: NA
+department: NA
+designation: NA
+application: NA
+projectname: NA
+mail: NA
+sn: tom
+PI-HOD: NA
+domain: NA
+subdomain: NA
+amount: NA
+funded: NA
+cpuhours: NA
+gpuhours: NA
+startdate: 01-01-2025
+enddate: 01-01-2026
+address: Baner Pune
+description: tom user password:tom@@123
