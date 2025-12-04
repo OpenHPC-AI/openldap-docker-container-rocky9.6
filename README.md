@@ -1,12 +1,19 @@
 # Create openldap docker container image
-Install the git package
+
+**Install the git package**
 ```bash
 yum install git
 ```
-Clone the openldap code in your environment
+**Clone the openldap code in your environment**
 ```bash
-git clone 
+git clone https://github.com/OpenHPC-AI/openldap-docker-container-rocky9.6.git
 ```
+**Build openldap docker image**
+```bash
+cd ./openldap-docker-container-rocky9.6/
+
+```
+
 # Configure LDAP Container Setup
 
 1. **Edit the `.env` file on both master nodes**  
