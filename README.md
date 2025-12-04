@@ -30,9 +30,9 @@ docker save -o openldap_2.17.0_img.tar openldap:2.17.0
    Also update the `docker-compose.yml` file to ensure the LDAP container uses this path for its persistent volume.
 
 4. ***Load the LDAP Docker image (If your OpenLDAP image was built on another machine, transfer the saved image to this server and load it locally before starting the container.)***
-   
+   ```
    **Skip this step when operating on the same server environment.**
-   
+   ```
    Load the pre-built LDAP image into the local Docker environment:
    ```bash
    docker load < openldap_2.17.0_img.tar
