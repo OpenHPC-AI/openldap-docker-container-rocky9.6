@@ -24,6 +24,7 @@ variable_set() {
     envsubst < /ldap_config/nslcd.conf.template > /etc/nslcd.conf
     envsubst < /ldap_config/migrate_common.ph.template > /usr/share/migrationtools/migrate_common.ph
     envsubst < /ldap_config/ldap.conf.template  > /etc/openldap/ldap.conf
+    envsubst < /ldap_config/ldap-script/testuser.ldif.template > /ldap_config/ldap-script/testuser.ldif
 }
 
 enable_slapd_service() {
