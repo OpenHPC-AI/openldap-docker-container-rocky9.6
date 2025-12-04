@@ -29,3 +29,60 @@ docker build --network host -t openldap:2.17.0 .
    ```bash
    docker load < {docker_ldap_images}
    ```
+4. **Update docker-compose.yml**
+   Modify the file to reference the loaded LDAP image and the persistent volume configuration:
+   ```bash
+   vim docker-compose.yml
+   ```
+5. **Create and start the LDAP container**
+   ```bash
+   docker-compose up -d
+   ```
+6. **Verify the LDAP container is running**
+   Confirm that the image is loaded and the container is up and healthy:
+   ```bash
+   docker images | grep ldap
+   docker ps | grep ldap
+   ```
+**The LDAP service should now be successfully deployed using Docker Compose with persistent storage.**
+
+**Bonus:**
+
+# ldap host machine setup
+
+# LDAP Host Machine Setup (Single Server)
+
+These steps required to configure the host machine to use the LDAP commands from host machine.
+---
+
+1. **Install Required LDAP Client Packages**
+ Install necessary packages on the host machine:
+  ```bash
+  yum install -y nss-pam-ldapd authconfig openldap openldap-clients
+  ```
+2. **Backup Default System Configuration Files**
+  Take a backup of the default configuration files before replacing them:
+  ```bash
+  mv /etc/nsswitch.conf /etc/nsswitch.conf.bk
+  mv /etc/nslcd.conf /etc/nslcd.conf.bk
+  mv /etc/openldap /etc/openldap.bk
+  mv /var/lib/ldap /var/lib/ldap.bk
+  ```
+3. **Copy LDAP Configuration Files From Container**
+  Copy the required files from your LDAP container to the host:
+  ```bash
+  docker cp ldap_server:/etc/nsswitch.conf /etc/
+  docker cp ldap_server:/etc/nslcd.conf /etc/
+  ```
+***Note - Replace ldap_server with the actual container name or ID of your LDAP container.***
+
+4. **Create Symlinks for LDAP Persistent Data**
+   Link host system paths to the persistent volume used by the LDAP container:
+   ```bash
+   ln -s /hpc_container_pv/ldapdata/var/lib/ldap /var/lib/
+   ln -s /hpc_container_pv/ldapdata/etc/openldap /etc/
+   ```
+5. **Enable and Start the nslcd Service**
+   ```bash
+   systemctl enable --now nslcd
+   ```
