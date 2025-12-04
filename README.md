@@ -21,24 +21,27 @@ docker build --network host -t openldap:2.17.0 .
    Update all required environment variables to match your cluster setup.
 
 2. **Create the `hpc_container_pv` directory**  
-   This directory will store persistent data for the LDAP container.  
+   This directory will store persistent data for the LDAP container.
+   ```bash
+   mkdir /hpc_container_pv
+   ```
    Also update the `docker-compose.yml` file to ensure the LDAP container uses this path for its persistent volume.
 
-3. **Load the LDAP Docker image**  
+4. **Load the LDAP Docker image**  
    Load the pre-built LDAP image into the local Docker environment:
    ```bash
    docker load < {docker_ldap_images}
    ```
-4. **Update docker-compose.yml**
+5. **Update docker-compose.yml**
    Modify the file to reference the loaded LDAP image and the persistent volume configuration:
    ```bash
    vim docker-compose.yml
    ```
-5. **Create and start the LDAP container**
+6. **Create and start the LDAP container**
    ```bash
    docker-compose up -d
    ```
-6. **Verify the LDAP container is running**
+7. **Verify the LDAP container is running**
    Confirm that the image is loaded and the container is up and healthy:
    ```bash
    docker images | grep ldap
