@@ -6,7 +6,7 @@ services:
     env_file:
       - .env
     volumes:
-      - ./ldapdata/:/ldapdata
+      - /hpc_container_pv/ldapdata/:/ldapdata
     stdin_open: true  # Equivalent to -i
     tty: true         # Equivalent to -t
     restart: unless-stopped
