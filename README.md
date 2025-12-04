@@ -10,7 +10,8 @@ git clone https://github.com/OpenHPC-AI/openldap-docker-container-rocky9.6.git
 ```
 **Build openldap docker image**
 ```bash
-cd ./openldap-docker-container-rocky9.6/
+cd ./openldap-docker-container-rocky9.6/ldap-server
+docker build --network host -t openldap:2.17.0 .
 
 ```
 
