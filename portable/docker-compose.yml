@@ -1,6 +1,6 @@
 services:
   ldap_container:
-    image: cdac_ldap/rocky9.6:latest
+    image: openldap:2.17.0
     container_name: ldap_server
     network_mode: host
     env_file:
