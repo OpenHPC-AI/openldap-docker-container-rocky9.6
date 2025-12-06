@@ -11,11 +11,11 @@ git clone https://github.com/OpenHPC-AI/openldap-docker-container-rocky9.6.git
 **Build openldap docker image**
 ```bash
 cd ./openldap-docker-container-rocky9.6/ldap-server
-docker build --network host -t openldap:2.17.0 .
+docker build --network host -t openldap:2.4.46 .
 ```
 **Export the OpenLDAP Docker image to make it portable for use on other servers**
 ```bash
-docker save -o openldap_2.17.0_img.tar openldap:2.17.0
+docker save -o openldap_2.4.46_img.tar openldap:2.4.46
 ```
 # Configure LDAP Container Setup
 
@@ -35,7 +35,7 @@ docker save -o openldap_2.17.0_img.tar openldap:2.17.0
    ```
    Load the pre-built LDAP image into the local Docker environment:
    ```bash
-   docker load < openldap_2.17.0_img.tar
+   docker load < openldap_2.4.46_img.tar
    ```
 6. **Update docker-compose.yml**
    Modify the file to reference the loaded LDAP image and the persistent volume configuration:
