@@ -14,7 +14,7 @@ mkdir -p /hpctool_stack
 cp /hpctool_stack/dev.env /hpctool_stack/.env
 ```
 
-1. **Edit the `.env` file on both master nodes**  
+1. **Edit the `.env` file on master nodes**  
    Update all required environment variables to match your cluster setup.
 
 2. **Create the `hpc_container_pv` directory**  
