@@ -40,6 +40,8 @@ cp /hpctool_stack/dev.env /hpctool_stack/.env
 7. **Create and start the LDAP container**
    ```bash
    docker-compose up -d
+   (or)
+   docker compose up -d
    ```
 8. **Verify the LDAP container is running**
    Confirm that the image is loaded and the container is up and healthy:
