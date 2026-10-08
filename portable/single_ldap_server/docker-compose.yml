@@ -1,0 +1,12 @@
+services:
+  ldap_container:
+    image: openldap:2.4.46
+    container_name: ldap_server
+    network_mode: host
+    env_file:
+      - .env
+    volumes:
+      - /hpc_container_pv/ldapdata/:/ldapdata
+    stdin_open: true  # Equivalent to -i
+    tty: true         # Equivalent to -t
+    restart: unless-stopped
